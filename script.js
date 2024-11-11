@@ -23,9 +23,18 @@ function displayMatches() {
     const matchArray = findMatches(this.value, searchFrom);
     const html = matchArray
         .map(result => {
+            const regExp = new RegExp(this.value, 'gi');
+            const cityName = result.city.replace(
+                regExp,
+                `<span class="highlight">${this.value}</span>`
+            );
+            const stateName = result.state.replace(
+                regExp,
+                `<span class="highlight">${this.value}</span>`
+            );
             return `
             <li>
-                <span class="name">${result.city}, ${result.state}</span>
+                <span class="name">${cityName}, ${stateName}</span>
                 <span class="population">${result.population}</span>
             </li>
         `;
