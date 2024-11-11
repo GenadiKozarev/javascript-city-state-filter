@@ -40,7 +40,7 @@ function displayMatches() {
             return `
             <li>
                 <span class="name">${cityName}, ${stateName}</span>
-                <span class="population">${numberWithCommas(
+                <span class="population">population: ${numberWithCommas(
                     result.population
                 )}</span>
             </li>
