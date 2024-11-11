@@ -20,6 +20,7 @@ function findMatches(query, searchFrom) {
 }
 
 function numberWithCommas(input) {
+    // e.g. 8405837 -> 8,405,837
     return input.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
@@ -39,7 +40,9 @@ function displayMatches() {
             return `
             <li>
                 <span class="name">${cityName}, ${stateName}</span>
-                <span class="population">${numberWithCommas(result.population)}</span>
+                <span class="population">${numberWithCommas(
+                    result.population
+                )}</span>
             </li>
         `;
         })
